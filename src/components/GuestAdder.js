@@ -1,4 +1,6 @@
 import React from 'react';
+import {Restrictions} from './Restrictions';
+import {Preferences} from './Preferences';
 
 export default class GuestAdder extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ export default class GuestAdder extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInput (evt) {
+  handleInput(evt) {
     this.setState({nameInput: evt.target.value});
   }
 
@@ -24,12 +26,13 @@ export default class GuestAdder extends React.Component {
     this.setState({nameInput: ''});
   }
 
-  render () {
+  render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="input" placeholder="Enter guest name" onChange={this.handleInput} />
-        <input type="submit" />
+        <Restrictions />
+        <Preferences />
+        <input type="submit" value="Add Guest" />
       </form>
-    )
+    );
   }
 }

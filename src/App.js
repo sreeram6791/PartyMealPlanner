@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Switch, Route} from 'react-router-dom';
-import {Landing, GuestList} from './components';
+import {Landing, GuestList, Results} from './components';
 
 class App extends Component {
   render() {
@@ -17,6 +17,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route path="/guest-list" component={GuestList} />
+            <Route path="/results" component={Results} />
           </Switch>
         </main>
       </div>

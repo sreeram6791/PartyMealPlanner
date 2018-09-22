@@ -1,13 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Guest from './Guest';
-import GuestAdder from './GuestAdder'
+import GuestAdder from './GuestAdder';
 
 export default class GuestList extends React.Component {
   constructor (props) {
     super(props);
 
     this.state = {
-      guests: ['self'],
+      guests: [],
     }
 
     this.addGuest = this.addGuest.bind(this);
@@ -25,6 +26,8 @@ export default class GuestList extends React.Component {
         <h1>Add Guests Below:</h1>
         {this.state.guests.map((guest, i) => <Guest key={i} guestName={guest} />)}
         <GuestAdder addGuest={this.addGuest} />
+        <br />
+        <Link to="/results">Submit</Link>
       </div>
     );
   }
