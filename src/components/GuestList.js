@@ -23,7 +23,7 @@ export default class GuestList extends React.Component {
     return (
       <div>
 
-        <h1>Add Guests Below:</h1>
+        <h1>Add Guest Preferences Below:</h1>
         {this.state.guests.map((guest, i) => <Guest key={i} guestName={guest} />)}
         <GuestAdder addGuest={this.addGuest} />
         <br />
